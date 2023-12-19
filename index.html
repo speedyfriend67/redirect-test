@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirect Page</title>
+  <title>Random Redirect Page</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -34,15 +34,24 @@
 </head>
 <body>
   <div class="container">
-    <h1>Redirecting...</h1>
-    <p>This page will redirect you to YouTube in a few seconds.</p>
+    <h1>Random Redirecting...</h1>
+    <p>This page will randomly redirect you to one of the specified URLs in a few seconds.</p>
   </div>
 
   <script>
+    const redirectURLs = [
+      'https://www.youtube.com',
+      'https://www.google.com',
+      'https://www.minecraft.net',
+      'https://www.youtube.com/watch?v=dQw4w9WgXcQ' // Never Gonna Give You Up
+    ];
+
+    const randomIndex = Math.floor(Math.random() * redirectURLs.length);
+    const randomURL = redirectURLs[randomIndex];
+
     setTimeout(function() {
-      window.location.href = 'https://www.youtube.com';
-    }, 3000); 
+      window.location.href = randomURL;
+    }, 3000);
   </script>
 </body>
 </html>
-
